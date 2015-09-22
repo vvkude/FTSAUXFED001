@@ -21,6 +21,7 @@
 	- Modernizr
 	- jQuery
 	- jQuery Validation (or any JS validation plugin)
+	- CC Validation plugin
 - Make sure you're not loading in resources you don't need
 - Use HTML 5 validation that falls back to JS validation
 - Make sure the form is naturally keyboard accessible
