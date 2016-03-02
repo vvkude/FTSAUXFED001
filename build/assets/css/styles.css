@@ -104,7 +104,7 @@ img {
 
 /* -----------------------------------------------------------------------------
   
-  HEADER OBJECT
+  MASTHEAD
   
 ----------------------------------------------------------------------------- */
 
@@ -196,7 +196,7 @@ img {
 
 /* -----------------------------------------------------------------------------
   
-  ROOT ELEMENTS
+  ELEMENTS
   
 ----------------------------------------------------------------------------- */
 
@@ -204,7 +204,8 @@ img {
  *
  * pseudo-classes target whole elements
  * pseudo-elements target element sub-parts
-                */
+ *
+ *****/
 
 
 form{
@@ -265,7 +266,7 @@ li{
 
 /* -----------------------------------------------------------------------------
   
-  FORMS/ APPLICATION OBJECTS
+  FORMS/ APPLICATION CLASSES
   
 ----------------------------------------------------------------------------- */
 
@@ -276,7 +277,6 @@ li{
  * is separate from specific styling for forms. Also, form name and ID
  * changes can be catastrophic to back-end developers...and you probably
  * don't want back-end developers routing through your CSS, anyway
- *
  *
  ****/
 
@@ -368,7 +368,7 @@ fieldset{
 
 /* -----------------------------------------------------------------------------
   
-  VALIDATION STYLES
+  VALIDATION CONTROLS
   
 ----------------------------------------------------------------------------- */
 
@@ -379,6 +379,8 @@ fieldset{
 	width: 19px;
 	height: 19px;
 }
+
+
 
 :required:focus:invalid{
 	background:#fff url('../images/sprite.png') no-repeat right -163px top -157px;
@@ -402,6 +404,15 @@ fieldset{
 	moz-transition: all 0.25s ease 0s;
 	transition: all 0.25s ease 0s;
 	margin: 5px auto 0px;
+}
+
+:required:focus{
+	background:#444444 url('../images/sprite.png') no-repeat right -200px top -157px;
+	webkit-transition: all 0.25s ease 0s;
+	moz-transition: all 0.25s ease 0s;
+	transition: all 0.25s ease 0s;
+	margin: 5px auto 0px;
+	text-indent: -9999px;
 }
 
 /* -----------------------------------------------------------------------------

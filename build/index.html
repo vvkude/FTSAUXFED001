@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js"><!--lang="en-us" better for screen readers? Ask Scott-->
+<html lang="en-us" class="no-js"><!--lang="en-us" better for screen readers? Ask Scott-->
 <head>
 	<title>Sign Up for Whoo!</title>
 	<link rel="dns-prefetch" href="//ajax.googleapis.com">
@@ -35,14 +35,14 @@
 		<ul>
 			<li>
 				<label for="portfolio-name">Portfolio name</label>
-				<input type="text" id="portfolio-name__input" name="Portfolio Name" class="fieldset__item" aria-required="true" tabindex="1" placeholder="Judy Jetson Space Foods" required/>
+				<input type="text" id="portfolio-name" name="portfolio-name" class="fieldset__item" aria-required="true" required/>
 			</li>
 
 			<li>
 				<label for="portfolio-address">Portfolio address</label>
 				<div class="portfolio-address--wrapper">
 					<div class="portfolio-address__input">
-					<input type="text" id="portfolio-adress" name="Portfolio Address" class="fieldset__item" aria-required="true" tabindex="2" placeholder="eatatjudys" required>
+					<input type="text" id="portfolio-address" name="portfolio-address" class="fieldset__item" aria-required="true" required>
 					<!-- [above] should this be input type url? you have to type in a FQDN for it to validate, if it is...-->
 						<div class="top-level-domain">
 							<label for="portfolio-address">.sample.com</label><!-- secondary label-->
@@ -60,20 +60,20 @@
 	
 		<ul>
 			<li>
-				<label for="client-name">Name</label>
-				<input type="text" id="client-name" name="name" class="fieldset__item" aria-required="true" tabindex="3" placeholder="Judy Jetson" required>
+				<label for="client-name">Name</label><!--assuming this is the name of the person who is signing up-->
+				<input type="text" id="client-name" name="name" class="fieldset__item" aria-required="true" required>
 			</li>
 
 			<li>
 				<label for="client-email">Email</label>
-				<input type="email" id="client-email" name="client-email" class="fieldset__item" aria-required="true" tabindex="4" required>
+				<input type="email" id="client-email" name="client-email" class="fieldset__item" aria-required="true" required>
 				<label for="Email" class="email-privacy__footnote"> NOTE: We'll never share your email, promise.</label>
 				<!-- [above] secondary label to client-email-->
 			</li>
 	
 			<li>
 				<label for="account-password">Password</label>
-				<input type="password" id="account-password" name="account-password" class="fieldset__item" aria-required="true" tabindex="5" required>
+				<input type="password" id="account-password" name="account-password" class="fieldset__item" aria-required="true">
 				<!-- is a password field automatically required? ask someone -->
 			</li>
 		</ul>
@@ -87,25 +87,25 @@
 		<ul>
 			<li class="credit-card-number__field">
 				<label for="credit-card-number__data">Card Number</label>
-				<input type="text" id="credit-card-number__data" name="Card Number" class="fieldset__item" aria-required="true" tabindex="6" required>
+				<input type="text" id="credit-card-number__data" name="Card Number" class="fieldset__item" aria-required="true" required>
 				<!-- [above] should this be input type number or text?
 			  		  using number made safari add commas to the credit card number...lame...-->
 			</li>
 	
 			<li class="credit-card__items">
-				<input type="radio" id="amex" name="credit-card__item" value="amex" aria-required="true" tabindex="7" required>
+				<input type="radio" id="amex" name="credit-card__item" value="amex" aria-required="true" required>
 					<label for="amex">Amex</label>
-				<input type="radio" id="visa" name="credit-card__item" value="visa" aria-required="true" tabindex="8" required>
+				<input type="radio" id="visa" name="credit-card__item" value="visa" aria-required="true" required>
 					<label for="visa">Visa</label>
-				<input type="radio" id="discover" name="credit-card__item" value="discover" aria-required="true" tabindex="9" required>
+				<input type="radio" id="discover" name="credit-card__item" value="discover" aria-required="true" required>
 					<label for="discover">Discover</label>
-				<input type="radio" id="mastercard" name="credit-card__item" value="mastercard" aria-required="true" tabindex="10" required>
+				<input type="radio" id="mastercard" name="credit-card__item" value="mastercard" aria-required="true" required>
 					<label for="mastercard">Mastercard</label>
 			</li>
 
 			<li class="csv-code__field">
 					<label for="csv-code">Security Code</label>
-				<input type="text" id="csv-code" name="Security Code" class="fieldset__item" aria-required="true" tabindex="13" required>
+				<input type="text" id="csv-code" name="Security Code" class="fieldset__item" aria-required="true" required>
 					<label for="csv-code" class="csv-sprite">Security Code</label>
 			</li>
 		
@@ -117,7 +117,7 @@
 <!--<select name="month" class="month-selector" required>
 <option disabled >Month</option>--><!--this didnt display correctly...-->
 					<label for="month">
-						<select name="month" id="month" tabindex="11">
+						<select name="month" id="month">
 							<option value="month" selected disabled>Month</option>
 							<option value="January">01-January</option>
 							<option value="February">02-February</option>
@@ -135,7 +135,7 @@
 					</label>
 
 					<label for="year">
-						<select name="year" id="year" tabindex="12">
+						<select name="year" id="year">
 							<option value="year" selected disabled>Year</option>
 							<option value="2016">2016</option>
 							<option value="2017">2017</option>
@@ -148,6 +148,7 @@
 						</select>
 					</label>
 				</fieldset>
+				<!--[above] what if javascript is disabled? how can someone validate their card information? -->
 				<!--[above] looks sad in safari. I may have to change this a <ul> and style the <li> elements...-->
 			</div><!--expiry-wrapper-->
 		</ul>
