@@ -88,7 +88,8 @@
 			<li class="credit-card-number__field">
 				<label for="credit-card-number__data">Card Number</label>
 				<input type="text" id="credit-card-number__data" name="Card Number" class="fieldset__item" aria-required="true" tabindex="6" required>
-				<!-- [above] should this be input type number or text? -->
+				<!-- [above] should this be input type number or text?
+			  		  using number made safari add commas to the credit card number...lame...-->
 			</li>
 	
 			<li class="credit-card__items">
@@ -107,7 +108,7 @@
 				<input type="text" id="csv-code" name="Security Code" class="fieldset__item" aria-required="true" tabindex="13" required>
 					<label for="csv-code" class="csv-sprite">Security Code</label>
 			</li>
-		</ul>
+		
 	
 
 		<div class="expiry-wrapper">	
@@ -149,6 +150,7 @@
 				</fieldset>
 				<!--[above] looks sad in safari. I may have to change this a <ul> and style the <li> elements...-->
 			</div><!--expiry-wrapper-->
+		</ul>
 		</fieldset>
 	</section>
 
