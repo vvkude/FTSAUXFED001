@@ -1,5 +1,6 @@
     
-
+// when window or document ready
+// credit card validation information
 
 $('#credit-card-number__data').validateCreditCard(function(result){
 	if (result.card_type === null){ $('.credit-card__items input').prop("checked",false)
@@ -17,14 +18,15 @@ $('#credit-card-number__data').validateCreditCard(function(result){
 //
 
 function showCSV(){
-	var security = $('.csv-sprite'); 	//show the csv
+	var csv = $('.csv-sprite'); 			//get the csv-sprite class
 		if($('#amex').is(':checked')){	 	//but if the input is an amex
-			security.addClass('amex');	 	//add the amex class to the csv-sprite class
+			csv.addClass('amex');	 		//add the amex class to the csv-sprite class
 	} 
-		else{security.removeClass('amex');
+		else{csv.removeClass('amex');		//otherwise, display just the csv-sprite class
 }
 }
 
+//Modernizr script
 
 Modernizr.load({
 	test: Modernizr.input.required,

@@ -380,7 +380,14 @@ fieldset{
 	height: 19px;
 }
 
-
+.no-error{
+	background:#fff url('../images/sprite.png') no-repeat right -163px top -157px;
+	webkit-transition: all 0.25s ease 0s;
+	moz-transition: all 0.25s ease 0s;
+	transition: all 0.25s ease 0s;
+	margin: 5px auto 0px;
+	text-indent: -9999px;
+}
 
 :required:focus:invalid{
 	background:#fff url('../images/sprite.png') no-repeat right -163px top -157px;
