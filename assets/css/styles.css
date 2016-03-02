@@ -1,0 +1,544 @@
+
+/* -----------------------------------------------------------------------------
+  
+  FONTS
+  
+----------------------------------------------------------------------------- */
+/*@font-faces may be a good idea*/
+
+/* -----------------------------------------------------------------------------
+  
+  BOX SIZING RESET
+  
+----------------------------------------------------------------------------- */
+
+*, 
+*::before, 
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+/* -----------------------------------------------------------------------------
+  
+  ROOT ELEMENTS
+  
+----------------------------------------------------------------------------- */
+
+html,
+body{
+	background-color: #b2e2ff;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+/* -----------------------------------------------------------------------------
+  
+  HEADING ELEMENTS
+  
+----------------------------------------------------------------------------- */
+
+/****
+ *
+ * there is something tricky going on with the h1...the letter spacing isnt standard 
+ * and how is the height of the capital W the same as the ascender for the h?!?
+ *
+ * Oddly, looking at it in Firefox produces that effect pretty closely
+ *
+ * Option elements at the bottom of the page look abyssmal in Firefox, though...
+ *
+ ****/
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #f3f5f5;
+	font-size: 37px;
+	font-weight: 400;
+	font-family: Merriweather;
+	letter-spacing: 2px;
+	font-size-adjust: .5;
+	padding: 3% 5% 0;
+	margin:0;
+	}
+
+/* -----------------------------------------------------------------------------
+  
+  TEXT ELEMENTS
+  
+----------------------------------------------------------------------------- */
+
+a {
+	text-decoration: none;
+}
+
+p {
+	color: #b2e2ff;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing:.5px;
+	padding-left: 5%;
+	padding-bottom: 4%;
+	padding-top: 1px;
+	margin:0;
+}
+
+/* -----------------------------------------------------------------------------
+  
+  MEDIA ELEMENTS
+  
+----------------------------------------------------------------------------- */
+
+img {
+	max-width: 100%;/* whatever max width of display port is */
+	height: auto;
+}
+
+/* -----------------------------------------------------------------------------
+  
+  HEADER OBJECT
+  
+----------------------------------------------------------------------------- */
+
+.masthead{ /* header looks darker than it should be... */
+	background: linear-gradient(to bottom, #167793 0%,#125f77 90%,#125f77 100%);
+	font-family: Open Sans;
+	background-position: center;
+	background-color: #f3f5f5;
+	-moz-border-radius:5px 5px 0px 0px;
+	-webkit-border-radius:5px 5px 0px 0px;	
+	border-radius:5px 5px 0px 0px;
+}
+
+/* -----------------------------------------------------------------------------
+  
+  CONTAINER AND WRAPPER OBJECTS
+  
+----------------------------------------------------------------------------- */
+
+.background-wrapper{
+	background-color: #b2e2ff;
+	position: absolute;
+	padding: 2% 0% 5% 0%;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+.form-container{
+	width: 45%;
+	margin: 0 auto;
+	padding-bottom: 5%;
+	position: center;
+	max-width: 650px;
+	min-width: 650px;
+	background-color: #fff;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;	
+	border-radius:5px;
+}
+
+.fieldset-wrapper{ 
+	background-color: #fff;
+	background-position: center;
+}
+
+/* -----------------------------------------------------------------------------
+  
+  BUTTONS
+  
+----------------------------------------------------------------------------- */
+
+.button{ 
+	background: linear-gradient(to bottom, #90a933 0%,#7d9b32 90%,#7d9b32 100%);
+	margin: 5% auto 1%;
+	display: block;
+	padding: 10px 25px;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;	
+	border-radius:7px;
+	font-family: Merriweather;
+	font-weight: 300; /* argh! what weight is this!? */
+	font-size: .9em;
+	letter-spacing: .75px; /* don't know if this is accurate or not */
+	border: none;
+	color: #fdfdfd;
+	cursor:pointer; /*maintain link-style cursor*/
+	line-height: 1em; /*so the button is consistent across all browsers*/
+	webkit-transition: all 0.25s;
+	moz-transition: all 0.25s;
+	transition: all 0.25s ease 0s;
+	box-shadow: inset 0px 2px 0 0 #aabd62;
+    -moz-box-shadow: inset 0px 2px 0 0 #aabd62;
+    -webkit-box-shadow: inset 0px 2px 0 0 #aabd62;
+}
+
+.button:hover{ 
+	background: linear-gradient(to bottom, #7d9b32 100%,#7d9b32 90%,#90a933 0%);/* reverse gradient on hover*/
+	webkit-transition: all 0.25s;
+	moz-transition: all 0.25s;
+	transition: all 0.25s;
+}
+
+.button:disabled{
+	opacity:0.3;
+	cursor: not-allowed;
+}
+
+/* -----------------------------------------------------------------------------
+  
+  ROOT ELEMENTS
+  
+----------------------------------------------------------------------------- */
+
+/*****
+ *
+ * pseudo-classes target whole elements
+ * pseudo-elements target element sub-parts
+                */
+
+
+form{
+	counter-reset: section;
+}
+
+section{
+	counter-increment: section;
+}
+
+/* numbers in circles */
+section:before{
+	content: counter(section);
+	float: left;
+	margin: -.70em -1.25em;
+	font-family: Merriweather;
+	font-size: 1.2em;
+	display: inline-block;
+	font-weight: 400;
+	color: #fff;
+	background-color: #52a3d4;
+	border-radius: 25px;
+	padding: 5px 12px;
+	border: solid #fff 6px;
+}
+
+label, .expiry-wrapper legend{
+	font-family: Open Sans;
+	font-size: .75em;
+	color: #6f7070;
+}
+
+select{
+	background: linear-gradient(to bottom, #ffffff 0%,#eaeeee 40%,#eaeeee 40%,#eaeeee 100%);
+	/* [above] looks terrible in safari */
+	font-family: Open Sans;
+	font-size: .75em;
+	color: #6f7070;
+	padding: 10px;
+	margin: 1em .25em;
+	border: 1px solid #fff;
+	box-shadow: 0px 0px 1px 1px rgba(208,210,210,.7);
+}
+
+ul{
+	background-color: #f3f5f5;
+	list-style: none;
+	padding: 5% 6%;
+	margin-top: 0;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;	
+	border-radius:5px;
+}
+
+li{
+	margin-bottom: 15px;
+}
+
+/* -----------------------------------------------------------------------------
+  
+  FORMS/ APPLICATION OBJECTS
+  
+----------------------------------------------------------------------------- */
+
+/****
+ *
+ * I'd probably pull anything form-specific into its own CSS
+ * in a finished product, so the general styling for a page
+ * is separate from specific styling for forms. Also, form name and ID
+ * changes can be catastrophic to back-end developers...and you probably
+ * don't want back-end developers routing through your CSS, anyway
+ *
+ *
+ ****/
+
+fieldset{ 
+	background-color: #fff;
+	width: 90%;
+	margin: 2.5em auto -2em auto; /* must be a better way to manage this */
+	position: center;
+	border: none;
+}
+
+.instructions{ /* legend labels */
+	color: #0a5e78;
+	font-family: Merriweather;
+	font-weight: 400;
+	font-size: 1.15em;
+	text-align: left;
+	margin-bottom: .3em;
+}
+
+.email-privacy__footnote{
+	font-size: .65em;
+	color: #888888;
+}
+
+.fieldset__item{ 
+	width:100%;
+	border-radius: .4rem;
+	padding:7px;
+	display: block;
+	margin: 5px auto 0px;
+	font-family: Open Sans;
+	font-size: 1em;
+	border: 0;
+	-webkit-box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1);
+	-moz-box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1);
+	box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1);
+	background:#fff url('../images/sprite.png') no-repeat right -200px top -157px;
+}
+
+.portfolio-address--wrapper{
+	margin: 0 auto;
+	clear: both;
+	position: relative;
+}
+
+.portfolio-address--wrapper input{
+	width:70%;
+	display: inline-block;
+	position: relative;
+}
+
+.portfolio-address__input input{
+	border-radius: .4em 0 0 .4em;
+	-moz-border-radius: .4em 0 0 .4em;
+	-webkit-border-radius: .4em 0 0 .4em;
+	border: 0px;
+	z-index: 1;
+}
+
+.top-level-domain{
+	width: 30%;
+	display: inline-block;
+	position: absolute;
+	margin-top: 5px;
+	text-align: center;
+	background-color: #fafafa;
+	border-radius: 0em .4em .4em 0em;
+	-moz-border-radius: 0em .4em .4em 0em;
+	-webkit-border-radius: 0em .4em .4em 0em;
+	border: 0px;
+	padding: 9px;
+	-webkit-box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1);
+	-moz-box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1);
+	box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1)
+}
+
+.top-level-domain label{
+	color:#888;
+	font-size:.85em;
+	font-weight:400;
+}
+
+.expiry-wrapper fieldset{
+	background-color: #f3f5f5;
+	margin: 0;
+	padding: 0;
+}
+
+/* -----------------------------------------------------------------------------
+  
+  VALIDATION STYLES
+  
+----------------------------------------------------------------------------- */
+
+/*sprites for stop and go are at -1px -167px*/
+
+.v-sprite {
+	background: url('../images/sprite.png') no-repeat -30px -167px;
+	width: 19px;
+	height: 19px;
+}
+
+:required:focus:invalid{
+	background:#fff url('../images/sprite.png') no-repeat right -163px top -157px;
+	webkit-transition: all 0.25s ease 0s;
+	moz-transition: all 0.25s ease 0s;
+	transition: all 0.25s ease 0s;
+	margin: 5px auto 0px;
+}
+
+:required:focus:valid{
+	background:#fff url('../images/sprite.png') no-repeat right -133px top -157px;
+	webkit-transition: all 0.25s ease 0s;
+	moz-transition: all 0.25s ease 0s;
+	transition: all 0.25s ease 0s;
+	margin: 5px auto 0px;
+	}
+
+:required:valid{
+	background:#fff url('../images/sprite.png') no-repeat right -133px top -157px;
+	webkit-transition: all 0.25s ease 0s;
+	moz-transition: all 0.25s ease 0s;
+	transition: all 0.25s ease 0s;
+	margin: 5px auto 0px;
+}
+
+/* -----------------------------------------------------------------------------
+  
+  CREDIT CARD FORM ELEMENTS AND SPRITES
+  
+----------------------------------------------------------------------------- */
+
+.credit-card__items{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 26px;
+}
+
+.credit-card-number__field{
+	width:55%;
+	margin:0;
+	display: inline-block;
+}
+
+.csv-code__field{
+	width:30%;
+	margin:0;
+	display: inline-block;
+}
+
+.credit-card__items label, .code label{
+	display: inline-block;
+}
+
+/*kjsbfkjbsfksdf AHGHGHGHGHHGHHhhhh*/
+input[type="radio"]{
+	border: 0; 
+	clip: rect(0 0 0 0); 
+	height: 1px; margin: -1px; 
+	overflow: hidden; 
+	padding: 0; 
+	position: absolute; 
+	width: 1px;
+}
+
+input#amex:checked + label{ /* all labels immediately after a checked amex input */
+	background: url('../images/sprite.png') no-repeat 0px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#amex:not(:checked) + label{ /* all labels immediately after an unchecked amex input */
+	background: url('../images/sprite.png') no-repeat -1px -40px;
+	height:32px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#amex:not(:checked) + label:hover{ /* all hovered labels immediately after a checked amex input */
+	background: url('../images/sprite.png') no-repeat 0px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#visa:checked + label{
+	background: url('../images/sprite.png') no-repeat -48px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#visa:not(:checked) + label{
+	background: url('../images/sprite.png') no-repeat -48px -40px;
+	height:32px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#visa:not(:checked) + label:hover{
+	background: url('../images/sprite.png') no-repeat -48px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#discover:checked + label{
+	background: url('../images/sprite.png') no-repeat -96px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#discover:not(:checked) + label{
+	background: url('../images/sprite.png') no-repeat -96px -40px;
+	height:32px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#discover:not(:checked) + label:hover{
+	background: url('../images/sprite.png') no-repeat -96px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#mastercard:checked + label{
+	background: url('../images/sprite.png') no-repeat -144px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#mastercard:not(:checked) + label{
+	background: url('../images/sprite.png') no-repeat -144px -40px;
+	height:32px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#mastercard:not(:checked) + label:hover{
+	background: url('../images/sprite.png') no-repeat -144px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+.csv-sprite{
+	background: url('../images/sprite.png') no-repeat 0px -124px;
+	height:32px;
+	width:71px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 155px;
+	margin-top: -34px;
+	text-indent: -9999px;
+}
+
+.csv-sprite.amex{
+	background: url('../images/sprite.png') no-repeat 0px -82px;
+}
+
