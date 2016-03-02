@@ -108,7 +108,7 @@ img {
   
 ----------------------------------------------------------------------------- */
 
-.header{ /* header looks darker than it should be... */
+.masthead{ /* header looks darker than it should be... */
 	background: linear-gradient(to bottom, #167793 0%,#125f77 90%,#125f77 100%);
 	font-family: Open Sans;
 	background-position: center;
