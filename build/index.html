@@ -26,8 +26,6 @@
 <div class="fieldset-wrapper">
 
 <form id="whoo-signup">
-
-	<section>
 		<fieldset name="portfolio-name__fields" form="whoo-signup">
 			<!-- [above] I don't think fieldset names are valid in IE -->
 			<legend class="instructions">First, name your portfolio</legend>
@@ -48,13 +46,11 @@
 							<label for="portfolio-address">.sample.com</label><!-- secondary label -->
 						</div><!--/top-level-domain-->
 					</div><!--/portfolio-address__input-->
-				</div><!--/portfolio-address  wrapper-->
+				</div><!--/portfolio-address- -wrapper-->
 			</li>
 		</ul>
 		</fieldset><!--/portfolio-name__fields-->
-	</section><!--/end of section 1-->
 
-	<section>
 		<fieldset name="account-detail__fields" form="whoo-signup">
 			<legend class="instructions">Now, enter your account details</legend>
 	
@@ -78,9 +74,7 @@
 			</li>
 		</ul>
 		</fieldset><!--/account-detail__fields-->
-	</section><!--/end of section 2-->
 
-	<section>
 		<fieldset name="credit-card__fields" form="whoo-signup">
 			<legend class="instructions">Finally, enter your payment information</legend>
 	
@@ -111,50 +105,48 @@
 		
 	
 
-		<div class="expiry-wrapper">	
+		<li class="expiry-wrapper">	
 			<fieldset name="expiry-date" form="whoo-signup">
 				<legend class="instructions">Expiration date</legend>
 <!--<select name="month" class="month-selector" required>
 <option disabled >Month</option>--><!--this didnt display correctly...-->
-					<label for="month">
-						<select name="month" id="month">
-							<option value="month" selected disabled>Month</option>
-							<option value="January">01-January</option>
-							<option value="February">02-February</option>
-							<option value="March">03-March</option>
-							<option value="April">04-April</option>
-							<option value="May">05-May</option>
-							<option value="June">06-June</option>
-							<option value="July">07-July</option>
-							<option value="August">08-August</option>
-							<option value="September">09-September</option>
-							<option value="October">10-October</option>
-							<option value="November">11-November</option>
-							<option value="December">12-December</option>
-						</select>
-					</label>
+				<label for="month">
+					<select name="month" id="month">
+						<option value="month" selected disabled>Month</option>
+						<option value="January">01-January</option>
+						<option value="February">02-February</option>
+						<option value="March">03-March</option>
+						<option value="April">04-April</option>
+						<option value="May">05-May</option>
+						<option value="June">06-June</option>
+						<option value="July">07-July</option>
+						<option value="August">08-August</option>
+						<option value="September">09-September</option>
+						<option value="October">10-October</option>
+						<option value="November">11-November</option>
+						<option value="December">12-December</option>
+					</select>
+				</label>
 
-					<label for="year">
-						<select name="year" id="year">
-							<option value="year" selected disabled>Year</option>
-							<option value="2016">2016</option>
-							<option value="2017">2017</option>
-							<option value="2018">2018</option>
-							<option value="2019">2019</option>
-							<option value="2020">2020</option>
-							<option value="2021">2021</option>
-							<option value="2022">2022</option>
-							<option value="2023">2023</option>
-						</select>
-					</label>
-				</fieldset>
+				<label for="year">
+					<select name="year" id="year">
+						<option value="year" selected disabled>Year</option>
+						<option value="2016">2016</option>
+						<option value="2017">2017</option>
+						<option value="2018">2018</option>
+						<option value="2019">2019</option>
+						<option value="2020">2020</option>
+						<option value="2021">2021</option>
+						<option value="2022">2022</option>
+						<option value="2023">2023</option>
+					</select>
+				</label>
+			</fieldset>
 				<!--[above] what if javascript is disabled? how can someone validate their card information? -->
 				<!--[above] looks sad in safari. I may have to change this a <ul> and style the <li> elements...-->
-			</div><!--expiry-wrapper-->
+		</li><!--expiry-wrapper-->
 		</ul>
 		</fieldset>
-	</section>
-
 
  <input type="submit" name="submit" class="button" value="Create your portfolio">
  <!-- not using <button> because that had some styling issues with different browsers-->
