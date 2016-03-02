@@ -280,7 +280,7 @@ li{
  *
  ****/
 
-fieldset{ 
+fieldset { 
 	background-color: #fff;
 	width: 90%;
 	margin: 2.5em auto -2em auto; /* must be a better way to manage this */
@@ -288,7 +288,7 @@ fieldset{
 	border: none;
 }
 
-.instructions{ /* legend labels */
+.instructions { /* legend labels */
 	color: #0a5e78;
 	font-family: Merriweather;
 	font-weight: 400;
@@ -297,12 +297,12 @@ fieldset{
 	margin-bottom: .3em;
 }
 
-.email-privacy__footnote{
+.email-privacy__footnote{ 
 	font-size: .65em;
 	color: #888888;
 }
 
-.fieldset__item{ 
+.fieldset__item { 
 	width:100%;
 	border-radius: .4rem;
 	padding:7px;
@@ -374,13 +374,14 @@ fieldset{
 
 /*sprites for stop and go are at -1px -167px*/
 
-.v-sprite {
+.v-sprite:after {
 	background: url('../images/sprite.png') no-repeat -30px -167px;
-	width: 19px;
-	height: 19px;
+	width: 190px;
+	height: 190px;
+	float: right;
 }
 
-.no-error{
+.no-error {
 	background:#fff url('../images/sprite.png') no-repeat right -163px top -157px;
 	webkit-transition: all 0.25s ease 0s;
 	moz-transition: all 0.25s ease 0s;
@@ -389,7 +390,7 @@ fieldset{
 	text-indent: -9999px;
 }
 
-:required:focus:invalid{
+:required:focus:invalid {
 	background:#fff url('../images/sprite.png') no-repeat right -163px top -157px;
 	webkit-transition: all 0.25s ease 0s;
 	moz-transition: all 0.25s ease 0s;
@@ -397,7 +398,7 @@ fieldset{
 	margin: 5px auto 0px;
 }
 
-:required:focus:valid{
+:required:focus:valid {
 	background:#fff url('../images/sprite.png') no-repeat right -133px top -157px;
 	webkit-transition: all 0.25s ease 0s;
 	moz-transition: all 0.25s ease 0s;
@@ -405,7 +406,7 @@ fieldset{
 	margin: 5px auto 0px;
 	}
 
-:required:valid{
+:required:valid {
 	background:#fff url('../images/sprite.png') no-repeat right -133px top -157px;
 	webkit-transition: all 0.25s ease 0s;
 	moz-transition: all 0.25s ease 0s;
@@ -438,14 +439,14 @@ fieldset{
 	display: inline-block;
 }
 
-.credit-card__items label, .code label{
+.credit-card__items label, .csv-code label{
 	display: inline-block;
 }
 
 /*kjsbfkjbsfksdf AHGHGHGHGHHGHHhhhh*/
-input[type="radio"]{
+input[type="radio"]{ /*prevent it from being selected*/
 	border: 0; 
-	clip: rect(0 0 0 0); 
+	clip: rect(0 0 0 0); /*sprites need to fit in the radio inputs*/
 	height: 1px; margin: -1px; 
 	overflow: hidden; 
 	padding: 0; 
@@ -467,13 +468,6 @@ input#amex:not(:checked) + label{ /* all labels immediately after an unchecked a
 	text-indent: -9999px;
 }
 
-input#amex:not(:checked) + label:hover{ /* all hovered labels immediately after a checked amex input */
-	background: url('../images/sprite.png') no-repeat 0px 0px;
-	height:30px;
-	width:45px;
-	text-indent: -9999px;
-}
-
 input#visa:checked + label{
 	background: url('../images/sprite.png') no-repeat -48px 0px;
 	height:30px;
@@ -484,13 +478,6 @@ input#visa:checked + label{
 input#visa:not(:checked) + label{
 	background: url('../images/sprite.png') no-repeat -48px -40px;
 	height:32px;
-	width:45px;
-	text-indent: -9999px;
-}
-
-input#visa:not(:checked) + label:hover{
-	background: url('../images/sprite.png') no-repeat -48px 0px;
-	height:30px;
 	width:45px;
 	text-indent: -9999px;
 }
@@ -509,13 +496,6 @@ input#discover:not(:checked) + label{
 	text-indent: -9999px;
 }
 
-input#discover:not(:checked) + label:hover{
-	background: url('../images/sprite.png') no-repeat -96px 0px;
-	height:30px;
-	width:45px;
-	text-indent: -9999px;
-}
-
 input#mastercard:checked + label{
 	background: url('../images/sprite.png') no-repeat -144px 0px;
 	height:30px;
@@ -530,12 +510,37 @@ input#mastercard:not(:checked) + label{
 	text-indent: -9999px;
 }
 
+/*
+input#amex:not(:checked) + label:hover{ /* all hovered labels immediately after a checked amex input
+	background: url('../images/sprite.png') no-repeat 0px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
+}*/
+
+/*
+input#visa:not(:checked) + label:hover{
+	background: url('../images/sprite.png') no-repeat -48px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
+}*/
+
+/* should someone be able to hover and click on it?
+input#discover:not(:checked) + label:hover{
+	background: url('../images/sprite.png') no-repeat -96px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px; 
+}*/
+
+/*
 input#mastercard:not(:checked) + label:hover{
 	background: url('../images/sprite.png') no-repeat -144px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
-}
+}*/
 
 .csv-sprite{
 	background: url('../images/sprite.png') no-repeat 0px -124px;
