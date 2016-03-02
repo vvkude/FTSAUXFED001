@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta http-equiv="cleartype" content="on"><!-- IE mobile-->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans|Merriweather:300,400,600,700' rel='stylesheet' type='text/css'>
+	<base href="http://vvkude.github.io/FTSAUXFED001/">
 	<link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css">
 </head>
 <body>
@@ -15,12 +16,12 @@
 <div class="background-wrapper">
 <div class="form-container">
 
-<header role="banner"><!-- can this be a banner if it's in a div? -->
+<header>
 	<div class="masthead">
 		<h1>Sign up for Whoo!</h1>
 		<p>50 projects, 500 images, 10 videos, domain binding, and technical support</p>
 	</div>
-<header>
+</header>
 
 <div class="fieldset-wrapper">
 
@@ -47,7 +48,7 @@
 							<label for="portfolio-address">.sample.com</label><!-- secondary label-->
 						</div><!--/top-level-domain-->
 					</div><!--/portfolio-address__input-->
-				</div><!--/portfolio-address--wrapper-->
+				</div><!--/portfolio-address  wrapper-->
 			</li>
 		</ul>
 		</fieldset><!--/portfolio-name__fields-->
@@ -106,7 +107,7 @@
 				<input type="text" id="csv-code" name="Security Code" class="fieldset__item" aria-required="true" tabindex="13" required>
 					<label for="csv-code" class="csv-sprite">Security Code</label>
 			</li>
-	
+		</ul>
 	
 
 		<div class="expiry-wrapper">	
@@ -146,8 +147,8 @@
 						</select>
 					</label>
 				</fieldset>
-			</div>
-			</ul>
+				<!--[above] looks sad in safari. I may have to change this a <ul> and style the <li> elements...-->
+			</div><!--expiry-wrapper-->
 		</fieldset>
 	</section>
 
