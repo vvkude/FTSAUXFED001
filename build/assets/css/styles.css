@@ -87,11 +87,11 @@ h5 {
 }
 
 h6 {
-	color: #9b9c9c;
-	font-family: "Open Sans", sans-serif;
-	margin-left: 40px;
-	margin-bottom: 28px;
-	margin-top: -14px;
+	font-family: Open Sans;
+	letter-spacing: .5px;
+	color: #888888;
+	margin: 0;
+	padding: .5em 0em 0em 0em;
 }
 
 /* -----------------------------------------------------------------------------
@@ -178,7 +178,7 @@ img {
 
 /* -----------------------------------------------------------------------------
   
-  #UTTONS
+  #BUTTONS
   
 ----------------------------------------------------------------------------- */
 
@@ -312,7 +312,9 @@ fieldset {
 	border: none;
 }
 
-
+input[type="url"]:disabled, .top-level-domain {
+	background: #fafafa;
+}
 
 .instructions { /* legend labels */
 	color: #0a5e78;
@@ -369,7 +371,6 @@ fieldset {
 	position: absolute;
 	margin-top: 5px;
 	text-align: center;
-	background-color: #fafafa;
 	border-radius: 0em .4em .4em 0em;
 	-moz-border-radius: 0em .4em .4em 0em;
 	-webkit-border-radius: 0em .4em .4em 0em;
@@ -381,9 +382,6 @@ fieldset {
 }
 
 .top-level-domain label {
-	color:#888;
-	font-size:.85em;
-	font-weight:400;
 	display: none;
 }
 
@@ -399,10 +397,6 @@ fieldset {
 
 .sample-address__field input{
 	background: black;
-}
-
-.hidden-label {
-	display: none;
 }
 
 /* -----------------------------------------------------------------------------
