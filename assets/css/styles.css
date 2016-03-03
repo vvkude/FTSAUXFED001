@@ -1,14 +1,43 @@
+/* -----------------------------------------------------------------------------
+  
+            VIKRANT KUDESIA AUX FED MINOR CHALLENGE NUMERO UNO
+                             
+                             !!!!!!!!!!!!!!!
+                                 HOORAY
+							 !!!!!!!!!!!!!!!
+
+----------------------------------------------------------------------------- */
+
+
 
 /* -----------------------------------------------------------------------------
   
-  FONTS
+  #UTILITY
   
 ----------------------------------------------------------------------------- */
-/*@font-faces may be a good idea*/
+
+.isolate-red {
+	width: 100%;
+	height: 100%;
+	border: thin red;
+}
+
+.isolate-blue {
+	width: 100%;
+	height: 100%;
+	border: thin green;
+}
+
+.overlay-blue {
+	width: 100%;
+	height: 100%;
+	background: blue;
+	opacity: 0.5;
+}
 
 /* -----------------------------------------------------------------------------
   
-  BOX SIZING RESET
+  #BOX SIZING RESET
   
 ----------------------------------------------------------------------------- */
 
@@ -34,22 +63,18 @@ body{
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	font: inherit;
 }
 
 /* -----------------------------------------------------------------------------
   
-  HEADING ELEMENTS
+  #HEADING ELEMENTS
   
 ----------------------------------------------------------------------------- */
 
 /****
  *
- * there is something tricky going on with the h1...the letter spacing isnt standard 
- * and how is the height of the capital W the same as the ascender for the h?!?
- *
- * Oddly, looking at it in Firefox produces that effect pretty closely
- *
- * Option elements at the bottom of the page look abyssmal in Firefox, though...
+ * Check yo' letter spacing - remove any font weights not in use
  *
  ****/
 
@@ -58,8 +83,7 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
 	color: #f3f5f5;
 	font-size: 37px;
 	font-weight: 400;
@@ -68,17 +92,21 @@ h6 {
 	font-size-adjust: .5;
 	padding: 3% 5% 0;
 	margin:0;
-	}
+}
+
+h6 {
+	font-family: Open Sans;
+	letter-spacing: .5px;
+	color: #888888;
+	margin: 0;
+	padding: .5em 0em 0em 0em;
+}
 
 /* -----------------------------------------------------------------------------
   
-  TEXT ELEMENTS
+  #TEXT ELEMENTS
   
 ----------------------------------------------------------------------------- */
-
-a {
-	text-decoration: none;
-}
 
 p {
 	color: #b2e2ff;
@@ -93,7 +121,7 @@ p {
 
 /* -----------------------------------------------------------------------------
   
-  MEDIA ELEMENTS
+  #MEDIA ELEMENTS
   
 ----------------------------------------------------------------------------- */
 
@@ -104,7 +132,7 @@ img {
 
 /* -----------------------------------------------------------------------------
   
-  HEADER OBJECT
+  #MASTHEAD
   
 ----------------------------------------------------------------------------- */
 
@@ -120,7 +148,7 @@ img {
 
 /* -----------------------------------------------------------------------------
   
-  CONTAINER AND WRAPPER OBJECTS
+  #CONTAINER AND WRAPPER OBJECTS
   
 ----------------------------------------------------------------------------- */
 
@@ -154,7 +182,7 @@ img {
 
 /* -----------------------------------------------------------------------------
   
-  BUTTONS
+  #BUTTONS
   
 ----------------------------------------------------------------------------- */
 
@@ -196,26 +224,26 @@ img {
 
 /* -----------------------------------------------------------------------------
   
-  ROOT ELEMENTS
+  #ELEMENTS
   
 ----------------------------------------------------------------------------- */
 
 /*****
  *
- * pseudo-classes target whole elements
- * pseudo-elements target element sub-parts
-                */
+ * [TODO] use counters on fieldsets not sections 
+ *
+ *****/
 
 
 form{
 	counter-reset: section;
 }
 
+
 section{
 	counter-increment: section;
 }
 
-/* numbers in circles */
 section:before{
 	content: counter(section);
 	float: left;
@@ -237,9 +265,8 @@ label, .expiry-wrapper legend{
 	color: #6f7070;
 }
 
-select{
+select {
 	background: linear-gradient(to bottom, #ffffff 0%,#eaeeee 40%,#eaeeee 40%,#eaeeee 100%);
-	/* [above] looks terrible in safari */
 	font-family: Open Sans;
 	font-size: .75em;
 	color: #6f7070;
@@ -249,7 +276,7 @@ select{
 	box-shadow: 0px 0px 1px 1px rgba(208,210,210,.7);
 }
 
-ul{
+ul {
 	background-color: #f3f5f5;
 	list-style: none;
 	padding: 5% 6%;
@@ -259,13 +286,13 @@ ul{
 	border-radius:5px;
 }
 
-li{
+li {
 	margin-bottom: 15px;
 }
 
 /* -----------------------------------------------------------------------------
   
-  FORMS/ APPLICATION OBJECTS
+  #FORMS/ APPLICATION CLASSES
   
 ----------------------------------------------------------------------------- */
 
@@ -277,18 +304,44 @@ li{
  * changes can be catastrophic to back-end developers...and you probably
  * don't want back-end developers routing through your CSS, anyway
  *
- *
  ****/
 
-fieldset{ 
+fieldset { 
 	background-color: #fff;
 	width: 90%;
-	margin: 2.5em auto -2em auto; /* must be a better way to manage this */
+	margin: 2.5em auto -2em auto; 
 	position: center;
 	border: none;
 }
 
-.instructions{ /* legend labels */
+input:not([type="url"]):not([type="submit"]) {
+	font-weight: 600;
+	padding-left: .75em;
+}
+
+input[type="url"]:disabled {
+	background: #fafafa;
+	line-height: 1em;
+}
+
+/* placeholder-shown or ::placeholder? */
+.sample-address__field::-webkit-input-placeholder { 
+  font-size: 1.1em;
+}
+
+.sample-address__field::-moz-placeholder {
+  font-size: 1.1em;
+}
+
+.sample-address__field:-ms-input-placeholder {
+  font-size: 1.1em;
+}
+
+.sample-address__field:-moz-placeholder {
+  font-size: 1.1em;
+}
+
+.instructions { /* legend classes */
 	color: #0a5e78;
 	font-family: Merriweather;
 	font-weight: 400;
@@ -297,39 +350,39 @@ fieldset{
 	margin-bottom: .3em;
 }
 
-.email-privacy__footnote{
+.email-privacy__footnote{ 
 	font-size: .65em;
 	color: #888888;
 }
 
-.fieldset__item{ 
+.fieldset__item { 
 	width:100%;
-	border-radius: .4rem;
-	padding:7px;
 	display: block;
-	margin: 5px auto 0px;
+	border-radius: .4rem;
+	border: 0;
 	font-family: Open Sans;
 	font-size: 1em;
-	border: 0;
 	-webkit-box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1);
 	-moz-box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1);
 	box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1);
-	background:#fff url('../images/sprite.png') no-repeat right -200px top -157px;
+	background:#fff url('../images/sprite.png') no-repeat right -200px top -71px;
+	padding: 7px;
+	margin: 5px auto 0px;
 }
 
-.portfolio-address--wrapper{
+.portfolio-address--wrapper {
 	margin: 0 auto;
 	clear: both;
 	position: relative;
 }
 
-.portfolio-address--wrapper input{
+.portfolio-address--wrapper input {
 	width:70%;
 	display: inline-block;
 	position: relative;
 }
 
-.portfolio-address__input input{
+.portfolio-address__input input {
 	border-radius: .4em 0 0 .4em;
 	-moz-border-radius: .4em 0 0 .4em;
 	-webkit-border-radius: .4em 0 0 .4em;
@@ -337,13 +390,13 @@ fieldset{
 	z-index: 1;
 }
 
-.top-level-domain{
+.top-level-domain {
 	width: 30%;
+	background: #fafafa;
 	display: inline-block;
 	position: absolute;
 	margin-top: 5px;
 	text-align: center;
-	background-color: #fafafa;
 	border-radius: 0em .4em .4em 0em;
 	-moz-border-radius: 0em .4em .4em 0em;
 	-webkit-border-radius: 0em .4em .4em 0em;
@@ -354,182 +407,211 @@ fieldset{
 	box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1)
 }
 
-.top-level-domain label{
-	color:#888;
-	font-size:.85em;
-	font-weight:400;
+.top-level-domain label {
+	display: none;
 }
 
-.expiry-wrapper fieldset{
+.sample-address__field {
+	background-color: #000;
+}
+
+.expiry-wrapper fieldset {
 	background-color: #f3f5f5;
 	margin: 0;
 	padding: 0;
 }
 
+
 /* -----------------------------------------------------------------------------
   
-  VALIDATION STYLES
+  #VALIDATION STYLING
   
 ----------------------------------------------------------------------------- */
 
-/*sprites for stop and go are at -1px -167px*/
+/* cant have block elements in an input box 
+   still working on pseudo elements and sprites
 
-.v-sprite {
+.success-sprite {
 	background: url('../images/sprite.png') no-repeat -30px -167px;
 	width: 19px;
 	height: 19px;
+	float: right;
 }
 
-:required:focus:invalid{
-	background:#fff url('../images/sprite.png') no-repeat right -163px top -157px;
+.error-sprite {
+	background:#fff url('../images/sprite.png') no-repeat right -1px top -167px;
+	webkit-transition: all 0.25s ease 0s;
+	moz-transition: all 0.25s ease 0s;
+	transition: all 0.25s ease 0s;
+	width: 19px;
+	height: 19px;
+	float: right;
+	margin-top: -40px;
+}
+
+:required input[type=text] {
+	content: "";
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	background: url('../images/sprite.png') no-repeat -1px -167px;
+}*/
+
+:required:focus:invalid:not(select) {
+	background:#fff url('../images/sprite.png') no-repeat right -150px top -71px;
 	webkit-transition: all 0.25s ease 0s;
 	moz-transition: all 0.25s ease 0s;
 	transition: all 0.25s ease 0s;
 	margin: 5px auto 0px;
 }
 
-:required:focus:valid{
-	background:#fff url('../images/sprite.png') no-repeat right -133px top -157px;
+:required:focus:valid:not(select) {
+	background:#fff url('../images/sprite.png') no-repeat right -150px top -103px;
 	webkit-transition: all 0.25s ease 0s;
 	moz-transition: all 0.25s ease 0s;
 	transition: all 0.25s ease 0s;
 	margin: 5px auto 0px;
 	}
 
-:required:valid{
-	background:#fff url('../images/sprite.png') no-repeat right -133px top -157px;
+:required:valid:not(select) {
+	background:#fff url('../images/sprite.png') no-repeat right -150px top -103px;
 	webkit-transition: all 0.25s ease 0s;
 	moz-transition: all 0.25s ease 0s;
 	transition: all 0.25s ease 0s;
 	margin: 5px auto 0px;
 }
 
+
 /* -----------------------------------------------------------------------------
   
-  CREDIT CARD FORM ELEMENTS AND SPRITES
+  #CREDIT CARD FORM ELEMENTS AND SPRITES
   
 ----------------------------------------------------------------------------- */
 
-.credit-card__items{
+.credit-card__items {
 	display: inline-block;
 	vertical-align: top;
 	margin-top: 26px;
 }
 
-.credit-card-number__field{
+.credit-card-number__field {
 	width:55%;
 	margin:0;
 	display: inline-block;
 }
 
-.csv-code__field{
+.csv-code__field {
 	width:30%;
 	margin:0;
 	display: inline-block;
 }
 
-.credit-card__items label, .code label{
+.credit-card__items label, .csv-code label{
 	display: inline-block;
 }
 
 /*kjsbfkjbsfksdf AHGHGHGHGHHGHHhhhh*/
-input[type="radio"]{
+input[type="radio"] {
 	border: 0; 
-	clip: rect(0 0 0 0); 
-	height: 1px; margin: -1px; 
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);
+	height: 1px; 
+	margin: -1px; 
+	width: 1px;
 	overflow: hidden; 
 	padding: 0; 
 	position: absolute; 
-	width: 1px;
 }
 
-input#amex:checked + label{ /* all labels immediately after a checked amex input */
+input#amex:checked + label { 
 	background: url('../images/sprite.png') no-repeat 0px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#amex:not(:checked) + label{ /* all labels immediately after an unchecked amex input */
+input#amex:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -1px -40px;
 	height:32px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#amex:not(:checked) + label:hover{ /* all hovered labels immediately after a checked amex input */
-	background: url('../images/sprite.png') no-repeat 0px 0px;
-	height:30px;
-	width:45px;
-	text-indent: -9999px;
-}
-
-input#visa:checked + label{
+input#visa:checked + label {
 	background: url('../images/sprite.png') no-repeat -48px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#visa:not(:checked) + label{
+input#visa:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -48px -40px;
 	height:32px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#visa:not(:checked) + label:hover{
-	background: url('../images/sprite.png') no-repeat -48px 0px;
-	height:30px;
-	width:45px;
-	text-indent: -9999px;
-}
-
-input#discover:checked + label{
+input#discover:checked + label {
 	background: url('../images/sprite.png') no-repeat -96px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#discover:not(:checked) + label{
+input#discover:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -96px -40px;
 	height:32px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#discover:not(:checked) + label:hover{
-	background: url('../images/sprite.png') no-repeat -96px 0px;
-	height:30px;
-	width:45px;
-	text-indent: -9999px;
-}
-
-input#mastercard:checked + label{
+input#mastercard:checked + label {
 	background: url('../images/sprite.png') no-repeat -144px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#mastercard:not(:checked) + label{
+input#mastercard:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -144px -40px;
 	height:32px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#mastercard:not(:checked) + label:hover{
+/* Hover and click are necessary for users without javascript */
+input#amex:not(:checked) + label:hover { /* all hovered labels immediately after a checked amex input */
+	background: url('../images/sprite.png') no-repeat 0px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+
+input#visa:not(:checked) + label:hover {
+	background: url('../images/sprite.png') no-repeat -48px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#discover:not(:checked) + label:hover {
+	background: url('../images/sprite.png') no-repeat -96px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px; 
+}
+
+input#mastercard:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat -144px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-.csv-sprite{
-	background: url('../images/sprite.png') no-repeat 0px -124px;
-	height:32px;
+.csv-sprite {
+	background: url('../images/sprite.png') no-repeat -118px -120px;
+	height:34px;
 	width:71px;
 	display: inline-block;
 	vertical-align: top;
@@ -538,7 +620,7 @@ input#mastercard:not(:checked) + label:hover{
 	text-indent: -9999px;
 }
 
-.csv-sprite.amex{
-	background: url('../images/sprite.png') no-repeat 0px -82px;
+.csv-sprite.amex {
+	background: url('../images/sprite.png') no-repeat -118px -77px;
 }
 
