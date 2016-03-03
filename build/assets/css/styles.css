@@ -458,26 +458,26 @@ input[type="url"]:disabled {
 }*/
 
 :required:focus:invalid:not(select) {
-	background:#fff url('../images/sprite.png') no-repeat right -150px top -71px;
-	webkit-transition: all 0.25s ease 0s;
-	moz-transition: all 0.25s ease 0s;
-	transition: all 0.25s ease 0s;
+	background:#fff url('../images/sprite.png') no-repeat right -157px top -71px;
+	webkit-transition: all 0.25s ease .125s;
+	moz-transition: all 0.25s ease .125s;
+	transition: all 0.25s ease .125s;
 	margin: 5px auto 0px;
 }
 
 :required:focus:valid:not(select) {
-	background:#fff url('../images/sprite.png') no-repeat right -150px top -103px;
-	webkit-transition: all 0.25s ease 0s;
-	moz-transition: all 0.25s ease 0s;
-	transition: all 0.25s ease 0s;
+	background:#fff url('../images/sprite.png') no-repeat right -157px top -101px;
+	webkit-transition: all 0.25s ease .125s;
+	moz-transition: all 0.25s ease .125s;
+	transition: all 0.25s ease .125s;
 	margin: 5px auto 0px;
 	}
 
 :required:valid:not(select) {
-	background:#fff url('../images/sprite.png') no-repeat right -150px top -103px;
-	webkit-transition: all 0.25s ease 0s;
-	moz-transition: all 0.25s ease 0s;
-	transition: all 0.25s ease 0s;
+	background:#fff url('../images/sprite.png') no-repeat right -157px top -101px;
+	webkit-transition: all 0.25s ease .125s;
+	moz-transition: all 0.25s ease .125s;
+	transition: all 0.25s ease .125s;
 	margin: 5px auto 0px;
 }
 
