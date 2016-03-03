@@ -580,7 +580,7 @@ input#mastercard:not(:checked) + label {
 }
 
 /* Hover and click are necessary for users without javascript */
-input#amex:not(:checked) + label:hover { /* all hovered labels immediately after a checked amex input */
+input#amex:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat 0px 0px;
 	height:30px;
 	width:45px;
