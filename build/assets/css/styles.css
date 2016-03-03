@@ -308,8 +308,25 @@ fieldset {
 	border: none;
 }
 
-input[type="url"]:disabled, .top-level-domain {
+input[type="url"]:disabled {
 	background: #fafafa;
+	line-height: 1em;
+}
+
+.sample-address__field::-webkit-input-placeholder { /* :placeholder-shown or ::placeholder? */
+  font-size: 1.1em;
+}
+
+.sample-address__field::-moz-placeholder {
+  font-size: 1.1em;
+}
+
+.sample-address__field:-ms-input-placeholder {
+  font-size: 1.1em;
+}
+
+.sample-address__field:-moz-placeholder {
+  font-size: 1.1em;
 }
 
 .instructions { /* legend labels */
@@ -363,6 +380,7 @@ input[type="url"]:disabled, .top-level-domain {
 
 .top-level-domain {
 	width: 30%;
+	background: #fafafa;
 	display: inline-block;
 	position: absolute;
 	margin-top: 5px;
