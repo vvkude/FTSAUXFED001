@@ -458,26 +458,26 @@ input[type="url"]:disabled {
 }*/
 
 :required:focus:invalid:not(select) {
-	background:#fff url('../images/sprite.png') no-repeat right -150px top -71px;
-	webkit-transition: all 0.25s ease 0s;
-	moz-transition: all 0.25s ease 0s;
-	transition: all 0.25s ease 0s;
+	background:#fff url('../images/sprite.png') no-repeat right -157px top -71px;
+	webkit-transition: all 0.25s ease .125s;
+	moz-transition: all 0.25s ease .125s;
+	transition: all 0.25s ease .125s;
 	margin: 5px auto 0px;
 }
 
 :required:focus:valid:not(select) {
-	background:#fff url('../images/sprite.png') no-repeat right -150px top -103px;
-	webkit-transition: all 0.25s ease 0s;
-	moz-transition: all 0.25s ease 0s;
-	transition: all 0.25s ease 0s;
+	background:#fff url('../images/sprite.png') no-repeat right -157px top -101px;
+	webkit-transition: all 0.25s ease .125s;
+	moz-transition: all 0.25s ease .125s;
+	transition: all 0.25s ease .125s;
 	margin: 5px auto 0px;
 	}
 
 :required:valid:not(select) {
-	background:#fff url('../images/sprite.png') no-repeat right -150px top -103px;
-	webkit-transition: all 0.25s ease 0s;
-	moz-transition: all 0.25s ease 0s;
-	transition: all 0.25s ease 0s;
+	background:#fff url('../images/sprite.png') no-repeat right -157px top -101px;
+	webkit-transition: all 0.25s ease .125s;
+	moz-transition: all 0.25s ease .125s;
+	transition: all 0.25s ease .125s;
 	margin: 5px auto 0px;
 }
 
@@ -513,14 +513,12 @@ input[type="url"]:disabled {
 /*kjsbfkjbsfksdf AHGHGHGHGHHGHHhhhh*/
 input[type="radio"] {
 	border: 0; 
-	-webkit-clip-path: inset(0 0 0 0);
-	clip-path: inset(0 0 0 0);
 	height: 1px; 
-	margin: -1px; 
-	width: 1px;
-	overflow: hidden; 
+	overflow: hidden;
 	padding: 0; 
 	position: absolute; 
+	visibility: hidden;
+	cursor: pointer;
 }
 
 input#amex:checked + label { 
@@ -580,7 +578,7 @@ input#mastercard:not(:checked) + label {
 }
 
 /* Hover and click are necessary for users without javascript */
-input#amex:not(:checked) + label:hover { /* all hovered labels immediately after a checked amex input */
+input#amex:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat 0px 0px;
 	height:30px;
 	width:45px;
