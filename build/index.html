@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-us" class="no-js">
+<html lang="en" class="no-js"><!-- lang="en-us" may be better for screen readers-->
 <head>
 	<title>Sign Up for Whoo!</title>
 	<link rel="dns-prefetch" href="//ajax.googleapis.com">
@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta http-equiv="cleartype" content="on">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans|Merriweather:300,400,600,700' rel='stylesheet' type='text/css'>
-	<base href="http://vvkude.github.io/FTSAUXFED001/">
+	<!--<base href="http://vvkude.github.io/FTSAUXFED001/">-->
 	<link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
 <div class="background-wrapper">
 <div class="form-container">
 
-<header>
+<header role="banner"><!-- HTML doesn't validate with this line but it may help screen readers -->
 	<div class="masthead">
 		<h1>Sign up for Whoo!</h1>
 		<p>50 projects, 500 images, 10 videos, domain binding, and technical support</p>
@@ -25,9 +25,9 @@
 
 <div class="fieldset-wrapper">
 
-<form id="whoo-signup">
+<form id="whoo-signup" action="clean_data()" method="post">
+	<section>
 		<fieldset name="portfolio-name__fields" form="whoo-signup">
-			<!-- [above] I don't think fieldset names are valid in IE -->
 			<legend class="instructions">First, name your portfolio</legend>
 
 		<ul>
@@ -41,16 +41,21 @@
 				<div class="portfolio-address--wrapper">
 					<div class="portfolio-address__input">
 					<input type="text" id="portfolio-address" name="portfolio-address" class="fieldset__item" required>
-					<!-- [above] should this be input type url? you have to type in a FQDN for it to validate, if it is... -->
 						<div class="top-level-domain"><!-- [TODO] left border of this is too thick -->
-							<label for="portfolio-address">.sample.com</label><!-- secondary label -->
+							<label for="sample-address" class="hidden-label" id="hidden-label">Sample Address Field</label>
+								<input type="url" id="sample-address" name="sample-address" class="sample-address__field" placeholder=".sample.com" disabled> <!--STYLE="background: #fafafa;"><!-- why isn't this working from the css?!? -->
+								<!-- [above] the idea is that the top level domain will be preloaded into the form 
+										the information contained therein should still post upon form completion
+								-->
 						</div><!--/top-level-domain-->
 					</div><!--/portfolio-address__input-->
 				</div><!--/portfolio-address- -wrapper-->
 			</li>
 		</ul>
 		</fieldset><!--/portfolio-name__fields-->
+	</section><!--/section 1-->
 
+	<section>
 		<fieldset name="account-detail__fields" form="whoo-signup">
 			<legend class="instructions">Now, enter your account details</legend>
 	
@@ -73,7 +78,9 @@
 			</li>
 		</ul>
 		</fieldset><!--/account-detail__fields-->
+	</section><!--/section 2-->
 
+	<section>
 		<fieldset name="credit-card__fields" form="whoo-signup">
 			<legend class="instructions">Finally, enter your payment information</legend>
 	
@@ -144,7 +151,8 @@
 				<!--[above] what if javascript is disabled? how can someone validate their card information? -->
 			</li><!--expiry-wrapper-->
 		</ul>
-	</fieldset>
+		</fieldset>
+	</section><!--/section 3-->
 
  <input type="submit" name="submit" class="button" value="Create your portfolio">
  <!-- not using <button> because that had some styling issues with different browsers-->

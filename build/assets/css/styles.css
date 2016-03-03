@@ -1,14 +1,31 @@
-
 /* -----------------------------------------------------------------------------
   
-  FONTS
+  #UTILITY
   
 ----------------------------------------------------------------------------- */
-/*@font-faces may be a good idea*/
+
+.isolate-red {
+	width: 100%;
+	height: 100%;
+	border: thin red;
+}
+
+.isolate-blue {
+	width: 100%;
+	height: 100%;
+	border: thin green;
+}
+
+.overlay {
+	width: 100%;
+	height: 100%;
+	background: blue;
+	opacity: 0.5;
+}
 
 /* -----------------------------------------------------------------------------
   
-  BOX SIZING RESET
+  #BOX SIZING RESET
   
 ----------------------------------------------------------------------------- */
 
@@ -38,7 +55,7 @@ body{
 
 /* -----------------------------------------------------------------------------
   
-  HEADING ELEMENTS
+  #HEADING ELEMENTS
   
 ----------------------------------------------------------------------------- */
 
@@ -58,8 +75,7 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
 	color: #f3f5f5;
 	font-size: 37px;
 	font-weight: 400;
@@ -68,11 +84,19 @@ h6 {
 	font-size-adjust: .5;
 	padding: 3% 5% 0;
 	margin:0;
-	}
+}
+
+h6 {
+	color: #9b9c9c;
+	font-family: "Open Sans", sans-serif;
+	margin-left: 40px;
+	margin-bottom: 28px;
+	margin-top: -14px;
+}
 
 /* -----------------------------------------------------------------------------
   
-  TEXT ELEMENTS
+  #TEXT ELEMENTS
   
 ----------------------------------------------------------------------------- */
 
@@ -93,7 +117,7 @@ p {
 
 /* -----------------------------------------------------------------------------
   
-  MEDIA ELEMENTS
+  #MEDIA ELEMENTS
   
 ----------------------------------------------------------------------------- */
 
@@ -104,7 +128,7 @@ img {
 
 /* -----------------------------------------------------------------------------
   
-  MASTHEAD
+  #MASTHEAD
   
 ----------------------------------------------------------------------------- */
 
@@ -120,7 +144,7 @@ img {
 
 /* -----------------------------------------------------------------------------
   
-  CONTAINER AND WRAPPER OBJECTS
+  #CONTAINER AND WRAPPER OBJECTS
   
 ----------------------------------------------------------------------------- */
 
@@ -154,7 +178,7 @@ img {
 
 /* -----------------------------------------------------------------------------
   
-  BUTTONS
+  #UTTONS
   
 ----------------------------------------------------------------------------- */
 
@@ -196,7 +220,7 @@ img {
 
 /* -----------------------------------------------------------------------------
   
-  ELEMENTS
+  #ELEMENTS
   
 ----------------------------------------------------------------------------- */
 
@@ -238,7 +262,7 @@ label, .expiry-wrapper legend{
 	color: #6f7070;
 }
 
-select{
+select {
 	background: linear-gradient(to bottom, #ffffff 0%,#eaeeee 40%,#eaeeee 40%,#eaeeee 100%);
 	/* [above] looks terrible in safari */
 	font-family: Open Sans;
@@ -250,7 +274,7 @@ select{
 	box-shadow: 0px 0px 1px 1px rgba(208,210,210,.7);
 }
 
-ul{
+ul {
 	background-color: #f3f5f5;
 	list-style: none;
 	padding: 5% 6%;
@@ -260,13 +284,13 @@ ul{
 	border-radius:5px;
 }
 
-li{
+li {
 	margin-bottom: 15px;
 }
 
 /* -----------------------------------------------------------------------------
   
-  FORMS/ APPLICATION CLASSES
+  #FORMS/ APPLICATION CLASSES
   
 ----------------------------------------------------------------------------- */
 
@@ -287,6 +311,8 @@ fieldset {
 	position: center;
 	border: none;
 }
+
+
 
 .instructions { /* legend labels */
 	color: #0a5e78;
@@ -317,19 +343,19 @@ fieldset {
 	background:#fff url('../images/sprite.png') no-repeat right -200px top -157px;
 }
 
-.portfolio-address--wrapper{
+.portfolio-address--wrapper {
 	margin: 0 auto;
 	clear: both;
 	position: relative;
 }
 
-.portfolio-address--wrapper input{
+.portfolio-address--wrapper input {
 	width:70%;
 	display: inline-block;
 	position: relative;
 }
 
-.portfolio-address__input input{
+.portfolio-address__input input {
 	border-radius: .4em 0 0 .4em;
 	-moz-border-radius: .4em 0 0 .4em;
 	-webkit-border-radius: .4em 0 0 .4em;
@@ -337,7 +363,7 @@ fieldset {
 	z-index: 1;
 }
 
-.top-level-domain{
+.top-level-domain {
 	width: 30%;
 	display: inline-block;
 	position: absolute;
@@ -354,16 +380,29 @@ fieldset {
 	box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1)
 }
 
-.top-level-domain label{
+.top-level-domain label {
 	color:#888;
 	font-size:.85em;
 	font-weight:400;
+	display: none;
 }
 
-.expiry-wrapper fieldset{
+.sample-address__field {
+	background-color: #000;
+}
+
+.expiry-wrapper fieldset {
 	background-color: #f3f5f5;
 	margin: 0;
 	padding: 0;
+}
+
+.sample-address__field input{
+	background: black;
+}
+
+.hidden-label {
+	display: none;
 }
 
 /* -----------------------------------------------------------------------------
@@ -417,23 +456,23 @@ fieldset {
 
 /* -----------------------------------------------------------------------------
   
-  CREDIT CARD FORM ELEMENTS AND SPRITES
+  #CREDIT CARD FORM ELEMENTS AND SPRITES
   
 ----------------------------------------------------------------------------- */
 
-.credit-card__items{
+.credit-card__items {
 	display: inline-block;
 	vertical-align: top;
 	margin-top: 26px;
 }
 
-.credit-card-number__field{
+.credit-card-number__field {
 	width:55%;
 	margin:0;
 	display: inline-block;
 }
 
-.csv-code__field{
+.csv-code__field {
 	width:30%;
 	margin:0;
 	display: inline-block;
@@ -444,9 +483,9 @@ fieldset {
 }
 
 /*kjsbfkjbsfksdf AHGHGHGHGHHGHHhhhh*/
-input[type="radio"]{ /*prevent it from being selected*/
+input[type="radio"] {
 	border: 0; 
-	clip: rect(0 0 0 0); /*sprites need to fit in the radio inputs*/
+	clip: rect(0 0 0 0);
 	height: 1px; margin: -1px; 
 	overflow: hidden; 
 	padding: 0; 
@@ -454,95 +493,93 @@ input[type="radio"]{ /*prevent it from being selected*/
 	width: 1px;
 }
 
-input#amex:checked + label{ /* all labels immediately after a checked amex input */
+input#amex:checked + label { /* all labels immediately after a checked amex input */
 	background: url('../images/sprite.png') no-repeat 0px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#amex:not(:checked) + label{ /* all labels immediately after an unchecked amex input */
+input#amex:not(:checked) + label { /* all labels immediately after an unchecked amex input */
 	background: url('../images/sprite.png') no-repeat -1px -40px;
 	height:32px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#visa:checked + label{
+input#visa:checked + label {
 	background: url('../images/sprite.png') no-repeat -48px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#visa:not(:checked) + label{
+input#visa:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -48px -40px;
 	height:32px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#discover:checked + label{
+input#discover:checked + label {
 	background: url('../images/sprite.png') no-repeat -96px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#discover:not(:checked) + label{
+input#discover:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -96px -40px;
 	height:32px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#mastercard:checked + label{
+input#mastercard:checked + label {
 	background: url('../images/sprite.png') no-repeat -144px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-input#mastercard:not(:checked) + label{
+input#mastercard:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -144px -40px;
 	height:32px;
 	width:45px;
 	text-indent: -9999px;
 }
 
-/*
-input#amex:not(:checked) + label:hover{ /* all hovered labels immediately after a checked amex input
+/* Hover and click are necessary for users without javascript */
+input#amex:not(:checked) + label:hover { /* all hovered labels immediately after a checked amex input */
 	background: url('../images/sprite.png') no-repeat 0px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
-}*/
+}
 
-/*
-input#visa:not(:checked) + label:hover{
+
+input#visa:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat -48px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
-}*/
+}
 
-/* should someone be able to hover and click on it?
-input#discover:not(:checked) + label:hover{
+input#discover:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat -96px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px; 
-}*/
+}
 
-/*
-input#mastercard:not(:checked) + label:hover{
+input#mastercard:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat -144px 0px;
 	height:30px;
 	width:45px;
 	text-indent: -9999px;
-}*/
+}
 
-.csv-sprite{
+.csv-sprite {
 	background: url('../images/sprite.png') no-repeat 0px -124px;
 	height:32px;
 	width:71px;
@@ -553,7 +590,7 @@ input#mastercard:not(:checked) + label:hover{
 	text-indent: -9999px;
 }
 
-.csv-sprite.amex{
+.csv-sprite.amex {
 	background: url('../images/sprite.png') no-repeat 0px -82px;
 }
 
