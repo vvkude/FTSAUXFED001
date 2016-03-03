@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js"><!-- lang="en-us" may be better for screen readers-->
+<html lang="en" class="no-js"><!-- lang="en-us" may be better for screen readers? -->
 <head>
 	<title>Sign Up for Whoo!</title>
 	<link rel="dns-prefetch" href="//ajax.googleapis.com">
@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta http-equiv="cleartype" content="on">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans|Merriweather:300,400,600,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans|Merriweather:300,400,600' rel='stylesheet' type='text/css'>
 	<!--<base href="http://vvkude.github.io/FTSAUXFED001/">-->
 	<link rel="stylesheet" type="text/css" media="screen" href="assets/css/styles.css">
 </head>
@@ -25,11 +25,10 @@
 
 <div class="fieldset-wrapper">
 
-<form id="whoo-signup" action="sanitize_input()" method="post">
-	<section>
+<form id="whoo-signup" action="" method="post">
+	<section> <!--[TODO] replace counters on sections for ones on fieldsets -->
 		<fieldset name="portfolio-name__fields" form="whoo-signup">
 			<legend class="instructions">First, name your portfolio</legend>
-
 		<ul>
 			<li>
 				<label for="portfolio-name">Portfolio name</label>
@@ -40,13 +39,11 @@
 				<label for="portfolio-address">Portfolio address</label>
 				<div class="portfolio-address--wrapper">
 					<div class="portfolio-address__input">
-					<input type="text" id="portfolio-address" name="portfolio-address" class="fieldset__item" required>
+					<input type="text" id="portfolio-address" name="portfolio-address" class="fieldset__item" maxlength="2000" required>
 						<div class="top-level-domain"><!-- [TODO] left border of this is too thick -->
 							<label for="sample-address" id="hidden-label">Sample Address Field</label>
 								<input type="url" id="sample-address" name="sample-address" class="sample-address__field" placeholder=".sample.com" disabled>
-								<!-- [above] the idea is that the top level domain will be preloaded into the form 
-										the information contained therein should still post upon form completion
-								-->
+								<!-- [above][FIXME] This did not play out in the screen reader as planned -->
 						</div><!--/top-level-domain-->
 					</div><!--/portfolio-address__input-->
 				</div><!--/portfolio-address- -wrapper-->
@@ -62,7 +59,7 @@
 		<ul>
 			<li>
 				<label for="client-name">Name</label><!--assuming this is the name of the person who is signing up-->
-				<input type="text" id="client-name" name="name" class="fieldset__item" required>
+				<input type="text" id="client-name" name="client-name" class="fieldset__item" required>
 			</li>
 
 			<li>
@@ -88,8 +85,7 @@
 			<li class="credit-card-number__field">
 				<label for="credit-card-number__data">Card Number</label>
 				<input type="text" id="credit-card-number__data" name="Card Number" class="fieldset__item" required>
-				<!-- [above] should this be input type number or text?
-			  		  using number made safari add commas to the credit card number...lame...-->
+				<!-- [above][FIXME] entering text allows field to validate-->
 			</li>
 	
 			<li class="credit-card__items">
@@ -114,10 +110,8 @@
 			<li class="expiry-wrapper">	
 				<fieldset name="expiry-date" form="whoo-signup">
 					<legend class="instructions">Expiration date</legend>
-					<!--<select name="month" class="month-selector" required>
-					<option disabled >Month</option>--><!--this didnt display correctly...-->
 					<label for="month">
-						<select name="month" id="month">
+						<select name="month" id="month" required>
 							<option value="month" selected disabled>Month</option>
 							<option value="January">01-January</option>
 							<option value="February">02-February</option>
@@ -135,7 +129,7 @@
 					</label>
 
 					<label for="year">
-						<select name="year" id="year">
+						<select name="year" id="year" required>
 							<option value="year" selected disabled>Year</option>
 							<option value="2016">2016</option>
 							<option value="2017">2017</option>
@@ -166,6 +160,7 @@
 <script src="assets/js/vendor/jquery.validate.min.js" type="text/javascript"></script>
 <script src="assets/js/vendor/jquery.creditCardValidator.js" type="text/javascript"></script>
 <script src="assets/js/vendor/modernizr.min.js" type="text/javascript"></script>
+<script src="assets/js/vendor/parsley.min.js" type="text/javascript"></script>
 <script src="assets/js/script.js" type="text/javascript"></script>
 </body>
 </html>
