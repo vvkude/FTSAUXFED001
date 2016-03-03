@@ -513,14 +513,12 @@ input[type="url"]:disabled {
 /*kjsbfkjbsfksdf AHGHGHGHGHHGHHhhhh*/
 input[type="radio"] {
 	border: 0; 
-	-webkit-clip-path: inset(0 0 0 0);
-	clip-path: inset(0 0 0 0);
 	height: 1px; 
-	margin: -1px; 
-	width: 1px;
-	overflow: hidden; 
+	overflow: hidden;
 	padding: 0; 
 	position: absolute; 
+	visibility: hidden;
+	cursor: pointer;
 }
 
 input#amex:checked + label { 
