@@ -2,9 +2,9 @@
   
             VIKRANT KUDESIA AUX FED MINOR CHALLENGE NUMERO UNO
                              
-                             !!!!!!!!!!!!!!!
-                                 HOORAY
-							 !!!!!!!!!!!!!!!
+                !!!!!!!!!!!!!!!
+                    HOORAY
+				!!!!!!!!!!!!!!!
 
 ----------------------------------------------------------------------------- */
 
@@ -319,10 +319,10 @@ input:not([type="url"]):not([type="submit"]) {
 	padding-left: .75em;
 }
 
-input[type="url"]:disabled {
+/*input[type="url"]:readonly {
 	background: #fafafa;
 	line-height: 1em;
-}
+}*/
 
 /* placeholder-shown or ::placeholder? */
 .sample-address__field::-webkit-input-placeholder { 
@@ -407,12 +407,18 @@ input[type="url"]:disabled {
 	box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1)
 }
 
-.top-level-domain label {
-	display: none;
+
+
+#hidden-label {
+	position: absolute;
+	left: -999em;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .sample-address__field {
-	background-color: #000;
+	background-color: #fafafa;
+	line-height: 1em;
 }
 
 .expiry-wrapper fieldset {
@@ -428,34 +434,6 @@ input[type="url"]:disabled {
   
 ----------------------------------------------------------------------------- */
 
-/* cant have block elements in an input box 
-   still working on pseudo elements and sprites
-
-.success-sprite {
-	background: url('../images/sprite.png') no-repeat -30px -167px;
-	width: 19px;
-	height: 19px;
-	float: right;
-}
-
-.error-sprite {
-	background:#fff url('../images/sprite.png') no-repeat right -1px top -167px;
-	webkit-transition: all 0.25s ease 0s;
-	moz-transition: all 0.25s ease 0s;
-	transition: all 0.25s ease 0s;
-	width: 19px;
-	height: 19px;
-	float: right;
-	margin-top: -40px;
-}
-
-:required input[type=text] {
-	content: "";
-	display: inline-block;
-	width: 19px;
-	height: 19px;
-	background: url('../images/sprite.png') no-repeat -1px -167px;
-}*/
 
 :required:focus:invalid:not(select) {
 	background:#fff url('../images/sprite.png') no-repeat right -157px top -71px;
@@ -514,97 +492,73 @@ input[type="url"]:disabled {
 input[type="radio"] {
 	border: 0; 
 	height: 1px; 
-	overflow: hidden;
 	padding: 0; 
 	position: absolute; 
-	visibility: hidden;
+	left: -999em;
 	cursor: pointer;
 }
 
-input#amex:checked + label { 
+input#amex:checked + label, input#visa:checked + label, 
+input#discover:checked + label,input#mastercard:checked + label,  { 
 	background: url('../images/sprite.png') no-repeat 0px 0px;
 	height:30px;
 	width:45px;
-	text-indent: -9999px;
+	text-indent: -999em;
 }
 
-input#amex:not(:checked) + label {
+input#amex:not(:checked) + label, input#discover:not(:checked) + label,
+input#mastercard:not(:checked) + label, input#visa:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -1px -40px;
 	height:32px;
 	width:45px;
-	text-indent: -9999px;
+	text-indent: -999em;
 }
 
 input#visa:checked + label {
 	background: url('../images/sprite.png') no-repeat -48px 0px;
-	height:30px;
-	width:45px;
-	text-indent: -9999px;
-}
-
-input#visa:not(:checked) + label {
-	background: url('../images/sprite.png') no-repeat -48px -40px;
-	height:32px;
-	width:45px;
-	text-indent: -9999px;
 }
 
 input#discover:checked + label {
 	background: url('../images/sprite.png') no-repeat -96px 0px;
-	height:30px;
-	width:45px;
-	text-indent: -9999px;
-}
-
-input#discover:not(:checked) + label {
-	background: url('../images/sprite.png') no-repeat -96px -40px;
-	height:32px;
-	width:45px;
-	text-indent: -9999px;
 }
 
 input#mastercard:checked + label {
 	background: url('../images/sprite.png') no-repeat -144px 0px;
-	height:30px;
-	width:45px;
-	text-indent: -9999px;
+}
+
+input#visa:not(:checked) + label {
+	background: url('../images/sprite.png') no-repeat -48px -40px;
+}
+
+input#discover:not(:checked) + label {
+	background: url('../images/sprite.png') no-repeat -96px -40px;
 }
 
 input#mastercard:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -144px -40px;
-	height:32px;
-	width:45px;
-	text-indent: -9999px;
 }
 
 /* Hover and click are necessary for users without javascript */
-input#amex:not(:checked) + label:hover {
+input#amex:not(:checked) + label:hover, 
+input#visa:not(:checked) + label:hover,
+input#discover:not(:checked) + label:hover,
+input#mastercard:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat 0px 0px;
 	height:30px;
 	width:45px;
-	text-indent: -9999px;
+	text-indent: -999em;
 }
-
 
 input#visa:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat -48px 0px;
-	height:30px;
-	width:45px;
-	text-indent: -9999px;
 }
 
 input#discover:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat -96px 0px;
-	height:30px;
-	width:45px;
-	text-indent: -9999px; 
 }
 
 input#mastercard:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat -144px 0px;
-	height:30px;
-	width:45px;
-	text-indent: -9999px;
 }
 
 .csv-sprite {
@@ -615,7 +569,7 @@ input#mastercard:not(:checked) + label:hover {
 	vertical-align: top;
 	margin-left: 155px;
 	margin-top: -34px;
-	text-indent: -9999px;
+	text-indent: -999em;
 }
 
 .csv-sprite.amex {
