@@ -411,7 +411,7 @@ input:not([type="url"]):not([type="submit"]) {
 
 #hidden-label {
 	position: absolute;
-	left: -999em;
+	text-indent: 999em;
 	white-space: nowrap;
 	overflow: hidden;
 }
@@ -494,71 +494,103 @@ input[type="radio"] {
 	height: 1px; 
 	padding: 0; 
 	position: absolute; 
+	overflow: hidden;
 	left: -999em;
 	cursor: pointer;
 }
 
-input#amex:checked + label, input#visa:checked + label, 
-input#discover:checked + label,input#mastercard:checked + label,  { 
+input#amex:checked + label { 
 	background: url('../images/sprite.png') no-repeat 0px 0px;
 	height:30px;
 	width:45px;
-	text-indent: -999em;
+	text-indent: -9999px;
 }
 
-input#amex:not(:checked) + label, input#discover:not(:checked) + label,
-input#mastercard:not(:checked) + label, input#visa:not(:checked) + label {
+
+
+
+input#amex:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -1px -40px;
 	height:32px;
 	width:45px;
-	text-indent: -999em;
+	text-indent: -9999px;
 }
+
+
+
 
 input#visa:checked + label {
 	background: url('../images/sprite.png') no-repeat -48px 0px;
-}
-
-input#discover:checked + label {
-	background: url('../images/sprite.png') no-repeat -96px 0px;
-}
-
-input#mastercard:checked + label {
-	background: url('../images/sprite.png') no-repeat -144px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
 }
 
 input#visa:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -48px -40px;
+	height:32px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#discover:checked + label {
+	background: url('../images/sprite.png') no-repeat -96px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
 }
 
 input#discover:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -96px -40px;
+	height:32px;
+	width:45px;
+	text-indent: -9999px;
+}
+
+input#mastercard:checked + label {
+	background: url('../images/sprite.png') no-repeat -144px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
 }
 
 input#mastercard:not(:checked) + label {
 	background: url('../images/sprite.png') no-repeat -144px -40px;
+	height:32px;
+	width:45px;
+	text-indent: -9999px;
 }
 
 /* Hover and click are necessary for users without javascript */
-input#amex:not(:checked) + label:hover, 
-input#visa:not(:checked) + label:hover,
-input#discover:not(:checked) + label:hover,
-input#mastercard:not(:checked) + label:hover {
+input#amex:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat 0px 0px;
 	height:30px;
 	width:45px;
-	text-indent: -999em;
+	text-indent: -9999px;
 }
+
+
+
 
 input#visa:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat -48px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
 }
 
 input#discover:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat -96px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px; 
 }
 
 input#mastercard:not(:checked) + label:hover {
 	background: url('../images/sprite.png') no-repeat -144px 0px;
+	height:30px;
+	width:45px;
+	text-indent: -9999px;
 }
 
 .csv-sprite {
@@ -569,7 +601,7 @@ input#mastercard:not(:checked) + label:hover {
 	vertical-align: top;
 	margin-left: 155px;
 	margin-top: -34px;
-	text-indent: -999em;
+	text-indent: -9999px;
 }
 
 .csv-sprite.amex {
