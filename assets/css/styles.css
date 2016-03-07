@@ -64,6 +64,7 @@ body{
 	padding: 0;
 	height: 100%;
 	font: inherit;
+	font-family: Merriweather, serif;
 }
 
 /* -----------------------------------------------------------------------------
@@ -87,15 +88,15 @@ h5 {
 	color: #f3f5f5;
 	font-size: 37px;
 	font-weight: 400;
-	font-family: Merriweather;
 	letter-spacing: 2px;
 	font-size-adjust: .5;
 	padding: 3% 5% 0;
 	margin:0;
+	font-family: Merriweather, serif;
 }
 
 h6 {
-	font-family: Open Sans;
+	font-family: Open Sans, sans-serif;
 	letter-spacing: .5px;
 	color: #888888;
 	margin: 0;
@@ -126,7 +127,7 @@ p {
 ----------------------------------------------------------------------------- */
 
 img {
-	max-width: 100%;/* whatever max width of display port is */
+	max-width: 100%;
 	height: auto;
 }
 
@@ -136,7 +137,7 @@ img {
   
 ----------------------------------------------------------------------------- */
 
-.masthead{ /* header looks darker than it should be... */
+.masthead{
 	background: linear-gradient(to bottom, #167793 0%,#125f77 90%,#125f77 100%);
 	font-family: Open Sans;
 	background-position: center;
@@ -194,14 +195,13 @@ img {
 	-moz-border-radius:7px;
 	-webkit-border-radius:7px;	
 	border-radius:7px;
-	font-family: Merriweather;
-	font-weight: 300; /* argh! what weight is this!? */
+	font-weight: 300;
 	font-size: .9em;
-	letter-spacing: .75px; /* don't know if this is accurate or not */
+	letter-spacing: .75px;
 	border: none;
 	color: #fdfdfd;
 	cursor:pointer; /*maintain link-style cursor*/
-	line-height: 1em; /*so the button is consistent across all browsers*/
+	line-height: 1em; /*to safeguard against future placeholder size issues*/
 	webkit-transition: all 0.25s;
 	moz-transition: all 0.25s;
 	transition: all 0.25s ease 0s;
@@ -248,7 +248,6 @@ section:before{
 	content: counter(section);
 	float: left;
 	margin: -.70em -1.25em;
-	font-family: Merriweather;
 	font-size: 1.2em;
 	display: inline-block;
 	font-weight: 400;
@@ -260,14 +259,14 @@ section:before{
 }
 
 label, .expiry-wrapper legend{
-	font-family: Open Sans;
+	font-family: Open Sans, sans-serif;
 	font-size: .75em;
 	color: #6f7070;
 }
 
 select {
 	background: linear-gradient(to bottom, #ffffff 0%,#eaeeee 40%,#eaeeee 40%,#eaeeee 100%);
-	font-family: Open Sans;
+	font-family: Open Sans, sans-serif;
 	font-size: .75em;
 	color: #6f7070;
 	padding: 10px;
@@ -341,9 +340,8 @@ input:not([type="url"]):not([type="submit"]) {
   font-size: 1.1em;
 }
 
-.instructions { /* legend classes */
+.instructions { /* classes for legends */
 	color: #0a5e78;
-	font-family: Merriweather;
 	font-weight: 400;
 	font-size: 1.15em;
 	text-align: left;
@@ -360,7 +358,7 @@ input:not([type="url"]):not([type="submit"]) {
 	display: block;
 	border-radius: .4rem;
 	border: 0;
-	font-family: Open Sans;
+	font-family: Open Sans, sans-serif;
 	font-size: 1em;
 	-webkit-box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1);
 	-moz-box-shadow: inset 0px 1px 2px 0px rgba(191,191,191,1);
@@ -488,7 +486,6 @@ input:not([type="url"]):not([type="submit"]) {
 	display: inline-block;
 }
 
-/*kjsbfkjbsfksdf AHGHGHGHGHHGHHhhhh*/
 input[type="radio"] {
 	border: 0; 
 	height: 1px; 
